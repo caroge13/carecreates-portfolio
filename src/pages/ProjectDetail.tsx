@@ -80,22 +80,46 @@ const ProjectDetail = () => {
             </div>
             
             <div className="flex gap-2">
-              {project.githubLink && (
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2">
-                    <Github className="w-4 h-4" />
-                    github
-                  </Button>
-                </a>
-              )}
-              {project.figmaLink && (
-                <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2">
-                    <Figma className="w-4 h-4" />
-                    figma
-                  </Button>
-                </a>
-              )}
+              <a 
+                href={project.githubLink || "#"} 
+                target={project.githubLink && !project.githubLink.includes("placeholder") ? "_blank" : undefined}
+                rel={project.githubLink && !project.githubLink.includes("placeholder") ? "noopener noreferrer" : undefined}
+                onClick={(e) => {
+                  if (!project.githubLink || project.githubLink.includes("placeholder")) {
+                    e.preventDefault();
+                  }
+                }}
+                className={!project.githubLink || project.githubLink.includes("placeholder") ? "pointer-events-none" : ""}
+              >
+                <Button 
+                  variant="outline" 
+                  className={`gap-2 ${!project.githubLink || project.githubLink.includes("placeholder") ? "opacity-40" : ""}`}
+                  disabled={!project.githubLink || project.githubLink.includes("placeholder")}
+                >
+                  <Github className="w-4 h-4" />
+                  github
+                </Button>
+              </a>
+              <a 
+                href={project.figmaLink || "#"} 
+                target={project.figmaLink && !project.figmaLink.includes("placeholder") ? "_blank" : undefined}
+                rel={project.figmaLink && !project.figmaLink.includes("placeholder") ? "noopener noreferrer" : undefined}
+                onClick={(e) => {
+                  if (!project.figmaLink || project.figmaLink.includes("placeholder")) {
+                    e.preventDefault();
+                  }
+                }}
+                className={!project.figmaLink || project.figmaLink.includes("placeholder") ? "pointer-events-none" : ""}
+              >
+                <Button 
+                  variant="outline" 
+                  className={`gap-2 ${!project.figmaLink || project.figmaLink.includes("placeholder") ? "opacity-40" : ""}`}
+                  disabled={!project.figmaLink || project.figmaLink.includes("placeholder")}
+                >
+                  <Figma className="w-4 h-4" />
+                  figma
+                </Button>
+              </a>
             </div>
           </div>
           

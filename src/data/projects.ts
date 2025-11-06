@@ -24,7 +24,7 @@ export const projects: Project[] = [
     description: "A website that helps users track every target company in a watchlist, and notifications as soon as job postings for these companies drop.",
     impact: "Increased user engagement by 40% through improved onboarding flow",
     skills: ["User Research", "Product Strategy", "Wireframing", "A/B Testing"],
-    githubLink: "https://github.com/placeholder",
+    githubLink: "https://github.com/caroge13/internship-net",
     figmaLink: "https://figma.com/placeholder",
     image: "/project-internshipnet.jpg",
     architectureContent: [
@@ -41,7 +41,7 @@ export const projects: Project[] = [
         type: 'subheading',
         text: 'frontend stack',
         content: [
-          { type: 'bullet', text: 'React + Vite', table: { rows: [['purpose', 'modern, fast development and build toolchain'], ['key features', 'hot module replacement, TypeScript support, optimized builds'], ['routing', 'React Router DOM for client-side navigation'], ['state management', 'React Query (TanStack Query) for server state, React hooks for locla state']] } },
+          { type: 'bullet', text: 'React + Vite', table: { rows: [['purpose', 'modern, fast development and build toolchain'], ['key features', 'hot module replacement, TypeScript support, optimised builds'], ['routing', 'React Router DOM for client-side navigation'], ['state management', 'React Query (TanStack Query) for server state, React hooks for local state']] } },
           { type: 'bullet', text: 'UI Framework', table: { rows: [['purpose', 'consistent, accessible UI components with minimal bundle size'], ['Tailwind CSS', 'utility-first CSS framework for styling'], ['shadcn/ui', 'component library built on Radix UI primitives']] } },
           { type: 'bullet', text: 'key libraries', table: { rows: [['React Query', 'handles data fetching, caching, and sync with backend'], ['React Hook form', 'form state management and validation'], ['Zod', 'schema validation for TypeScript']] } },
         ]
@@ -268,7 +268,7 @@ export const projects: Project[] = [
       },
       {
         type: 'subheading',
-        text: 'future optimization opportunities',
+        text: 'future optimisation opportunities',
         content: [
           { type: 'bullet', text: 'parallel scraping for multiple companies' },
           { type: 'bullet', text: 'background job processing via Supabase cron jobs' },

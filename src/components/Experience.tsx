@@ -29,7 +29,7 @@ const experiences = [
     period: "May 2024 - December 2024",
     image: "",
     description: [
-      "Analyzed user data to inform product decisions",
+      "Analysed user data to inform product decisions",
       "Created dashboards for tracking key metrics",
       "Supported product roadmap planning"
     ]

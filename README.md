@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Portfolio Website - Caroline Ge
 
-## Project info
+A personal portfolio website showcasing my work, projects, and experiences.
 
-**URL**: https://lovable.dev/projects/d623cebe-3f91-42d4-bd33-0864501947f1
+## 🎨 Features
 
-## How can I edit this code?
+- **Hero Section**: Introduction
+- **About Me**: Three guiding principles (people, process, passion)
+- **Projects Showcase**: Detailed project cards with status indicators and lifecycle tracking
+  - Project detail pages with custom lifecycle documentation
+  - Architecture documentation pages for technical projects
+  - GitHub and Figma links for each project
+- **Experience Timeline**: Professional experience with photos and detailed descriptions
+- **Skills**: Technical and professional skills display
+- **Contact**: Resume download and contact information
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+### Frontend
+- **React 18** with TypeScript
+- **Vite** - Build tool and dev server
+- **React Router DOM** - Client-side routing and navigation
+- **Tailwind CSS** - Utility-first styling
+- **shadcn/ui** - Component library (built on Radix UI)
+- **Lucide React** - Icon library
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d623cebe-3f91-42d4-bd33-0864501947f1) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📁 Project Structure
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
+portfolio-website/
+├── src/
+│   ├── components/          # React components
+│   │   ├── ui/              # shadcn/ui components
+│   │   ├── About.tsx        # About me section
+│   │   ├── BackToTop.tsx    # Floating back-to-top button
+│   │   ├── Contact.tsx      # Contact section
+│   │   ├── Experience.tsx   # Experience timeline
+│   │   ├── Hero.tsx         # Hero section
+│   │   ├── Projects.tsx     # Projects showcase
+│   │   ├── Skills.tsx       # Skills display
+│   │   ├── scrapbook-arrow.tsx    # Custom arrow component
+│   │   └── scrapbook-image.tsx    # Scrapbook-style image component
+│   ├── pages/               # Route pages
+│   │   ├── Index.tsx        # Main landing page
+│   │   ├── ProjectDetail.tsx      # Individual project pages
+│   │   ├── ArchitectureDetail.tsx # Architecture documentation pages
+│   │   ├── Resume.tsx       # Resume viewer
+│   │   └── NotFound.tsx     # 404 page
+│   ├── data/
+│   │   └── projects.ts      # Project data and content
+│   ├── hooks/               # Custom React hooks
+│   └── lib/                 # Utility functions
+├── public/                  # Static assets
+│   ├── flower.png           # Favicon
+│   ├── left_arrows.png      # Left-pointing arrow images
+│   ├── right_arrows.png     # Right-pointing arrow images
+│   ├── me1.jpg              # Personal photos
+│   └── SYCarolineGe_Resume.pdf
+└── .github/
+    └── workflows/
+        └── deploy.yml        # GitHub Actions deployment workflow
+```
+## 📚 Documentation
 
-**Edit a file directly in GitHub**
+### Project Content
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Project details and lifecycle content are managed in `src/data/projects.ts`. Each project can have:
+- Custom lifecycle steps and content
+- Architecture documentation
+- GitHub and Figma links
+- Status indicators (completed/in progress with lifecycle step)
 
-**Use GitHub Codespaces**
+### Adding New Projects
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Open `src/data/projects.ts`
+2. Add a new project object to the `projects` array with:
+   - `id`: Unique identifier (used in URLs)
+   - `title`: Project name
+   - `status`: "completed" or "in progress"
+   - `lifecycleStep`: Current step (if in progress)
+   - `description`: Short description
+   - `impact`: Impact statement
+   - `skills`: Array of skills used
+   - `lifecycleContent`: Object with custom lifecycle steps and content
+   - `architectureContent`: Array for architecture documentation (optional)
 
-## What technologies are used for this project?
+### Customizing Content
 
-This project is built with:
+- **About Section**: Edit `src/components/About.tsx`
+- **Experience**: Edit `src/components/Experience.tsx`
+- **Skills**: Edit `src/components/Skills.tsx`
+- **Hero Section**: Edit `src/components/Hero.tsx`
+- **Contact**: Edit `src/components/Contact.tsx`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔧 Development
 
-## How can I deploy this project?
+### Available Scripts
 
-Simply open [Lovable](https://lovable.dev/projects/d623cebe-3f91-42d4-bd33-0864501947f1) and click on Share -> Publish.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## Can I connect a custom domain to my Lovable project?
+### Styling
 
-Yes, you can!
+The website uses Tailwind CSS with custom theme colours.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Scrapbook Components
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **ScrapbookImage**: Displays images with arrows and callout text
+- **ScrapbookArrow**: Custom arrow component with configurable positioning
+- **SimpleScrapbookArrow**: Simplified arrow component with preset directions
+
+## 🌐 Live Site
+
+This portfolio is hosted on a custom domain ([carolinege.me](https://carolinege.me)) and is publicly accessible. The site is automatically deployed via GitHub Actions when changes are pushed to the `main` branch.
+
+## 🎨 Design Philosophy
+
+This portfolio follows a cozy "scrapbook" or "story" aesthetic:
+- Warm colour palette of soft purple, cream, green, and dark grey for a cozy feel
+- Hand-drawn style arrows pointing to images and sections
+- Personal photos integrated throughout
+- Lowercase headings and UI elements for a casual, approachable feel
+- Story-like flow through sections
+
+## 📝 License
+
+This project is private and proprietary.
+
+## 🤝 Contributing
+
+This is a personal portfolio project. For questions or feedback, please reach out through the contact section on the website.
