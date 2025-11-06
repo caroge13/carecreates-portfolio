@@ -27,7 +27,7 @@ const experiences = [
     role: "Internal Audit Intern",
     company: "Prairie Payments Joint Venture",
     period: "May 2024 - December 2024",
-    image: "",
+    image: "/ppjv.jpg",
     description: [
       "Analysed user data to inform product decisions",
       "Created dashboards for tracking key metrics",

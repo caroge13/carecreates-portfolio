@@ -59,9 +59,9 @@ export const Hero = () => {
         {/* Scrapbook image positioned bottom-left */}
         <div className="absolute bottom-[-20px] left-0 md:left-[-100px] z-0 opacity-80 hidden md:block">
           <ScrapbookImage
-            src=""
-            alt="Workspace snapshot"
-            arrowText="my creative space"
+            src="/hero_puppers.jpg"
+            alt="Puppy snapshot"
+            arrowText="not my puppy but i love her regardless"
             arrowDirection="top-left"
             size="sm"
           />

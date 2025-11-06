@@ -12,9 +12,9 @@ export const Projects = () => {
         <div className="flex items-center justify-center gap-20 mb-4">
           <div className="hidden md:block">
             <ScrapbookImage
-              src=""
-              alt="Project sketches"
-              arrowText="ideas taking shape"
+              src="/projects_essential.jpg"
+              alt="Ginger health shots"
+              arrowText="essential for the grind!"
               arrowDirection="bottom-left"
               size="sm"
             />
@@ -24,9 +24,9 @@ export const Projects = () => {
           </h2>
           <div className="hidden md:block">
             <ScrapbookImage
-              src=""
-              alt="Product development"
-              arrowText="building things!"
+              src="/projects_teamwork.jpg"
+              alt="Teamwork makes the dream work"
+              arrowText="community + connection = dream teamwork"
               arrowDirection="top-right"
               size="sm"
             />

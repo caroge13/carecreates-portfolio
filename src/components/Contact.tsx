@@ -58,7 +58,7 @@ export const Contact = () => {
             >
               <Button
                 variant="outline"
-                className="bg-background border-2 border-primary text-foreground hover:bg-primary/10 rounded-full transition-colors"
+                className="bg-background border-2 border-primary text-foreground hover:bg-primary/10 transition-colors"
               >
                 <Github className="w-4 h-4 mr-2" />
                 view on github
