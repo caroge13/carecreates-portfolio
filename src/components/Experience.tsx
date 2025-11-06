@@ -1,0 +1,92 @@
+import { ScrapbookImage } from "@/components/ui/scrapbook-image";
+
+const experiences = [
+  {
+    role: "Operations Analyst",
+    company: "Royal Bank of Canada",
+    period: "May 2025 - August 2025",
+    image: "/rbc.jpg",
+    description: [
+      "Led feature development from ideation to launch",
+      "Conducted user interviews and synthesized insights",
+      "Collaborated with engineering and design teams"
+    ]
+  },
+  {
+    role: "President",
+    company: "Western Founders Network (WesternU's largest business, tech, and entrepreneurship club)",
+    period: "September 2023 - Present",
+    image: "/wfn.JPEG",
+    description: [
+      "Achievement or responsibility",
+      "Another achievement or responsibility",
+      "One more achievement or responsibility"
+    ]
+  },
+  {
+    role: "Internal Audit Intern",
+    company: "Prairie Payments Joint Venture",
+    period: "May 2024 - December 2024",
+    image: "",
+    description: [
+      "Analyzed user data to inform product decisions",
+      "Created dashboards for tracking key metrics",
+      "Supported product roadmap planning"
+    ]
+  }
+];
+
+export const Experience = () => {
+  return (
+    <section className="py-20 px-6 bg-card relative overflow-hidden">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground text-center">
+            experience
+          </h2>
+        </div>
+        
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div 
+              key={index} 
+              className="relative pl-8 pb-8 border-l-2 border-primary/30 last:pb-0 hover:border-primary transition-colors"
+            >
+              <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+              
+              <div className="bg-background rounded-xl p-6 shadow-warm-sm hover:shadow-warm-md transition-shadow relative">
+                {/* Experience image */}
+                <div className="absolute top-4 right-4 opacity-80">
+                  <ScrapbookImage
+                    src={exp.image}
+                    alt={`${exp.company} experience`}
+                    arrowText=""
+                    size="sm"
+                    className="w-20 h-20"
+                  />
+                </div>
+                
+                <div className="mb-4 pr-24">
+                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-1">
+                    {exp.role}
+                  </h3>
+                  <p className="text-secondary font-medium">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
+                </div>
+                
+                <ul className="space-y-2">
+                  {exp.description.map((item, idx) => (
+                    <li key={idx} className="text-muted-foreground flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
