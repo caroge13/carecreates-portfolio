@@ -48,7 +48,16 @@ export const Contact = () => {
         
         <div className="border-t border-border pt-8">
           <p className="text-muted-foreground">
-            © 2025 Caroline Ge. Built with care and lots of coffee ☕
+            © 2025 Caroline Ge. Built with <em>care</em> 🫶🏻
+            {" "}
+            <a 
+              href="https://github.com/caroge13/carecreates-portfolio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+            >
+              <Github className="w-4 h-4" />
+            </a>
           </p>
         </div>
       </div>
