@@ -123,6 +123,18 @@ const ArchitectureDetail = () => {
       );
     }
     
+    if (item.type === 'image') {
+      return (
+        <div key={index} className="my-6 flex justify-center">
+          <img 
+            src={item.src} 
+            alt={item.alt || 'Architecture diagram'} 
+            className="max-w-full h-auto rounded-lg shadow-warm-md"
+          />
+        </div>
+      );
+    }
+    
     if (item.type === 'subheading') {
       return (
         <div key={index} className="space-y-4 mt-6">

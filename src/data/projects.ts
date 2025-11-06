@@ -33,7 +33,7 @@ export const projects: Project[] = [
       
       // system architecture section
       { type: 'heading', text: 'system architecture' },
-      "Your system architecture chart will be pasted here.",
+      { type: 'image', src: '/architecture.png', alt: 'InternshipNet system architecture diagram' },
       
       // core platforms & technologies section
       { type: 'heading', text: 'core platforms & technologies' },
