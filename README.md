@@ -1,6 +1,6 @@
 # Portfolio Website - Caroline Ge
 
-A personal portfolio website showcasing my work, projects, and experiences.
+A personal portfolio website showcasing my work, projects, and experiences!
 
 ## 🎨 Features
 
