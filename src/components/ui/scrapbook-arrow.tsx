@@ -59,16 +59,26 @@ export const ScrapbookArrow = ({
       />
       {text && (
         <div
-          className="absolute text-xs md:text-sm text-foreground/80 font-medium whitespace-nowrap bg-background/80 px-2 py-1 rounded"
+          className="absolute text-xs md:text-sm text-foreground/80 font-medium bg-background/80 px-2 py-1 rounded"
           style={{
             left: `${Math.max(length, 80) * textOffsetX}px`,
             top: textOffsetY,
             transform: `rotate(${angle + rotation + textRotation}deg) translateX(${textTranslateX}px)`,
             transformOrigin: '0 0',
             maxWidth: '150px',
+            whiteSpace: text.includes('\\n') ? 'normal' : 'nowrap',
           }}
         >
-          {text}
+          {text.includes('\\n') ? (
+            text.split('\\n').map((line, i, arr) => (
+              <span key={i}>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))
+          ) : (
+            text
+          )}
         </div>
       )}
     </div>
@@ -81,13 +91,21 @@ interface SimpleScrapbookArrowProps {
   text?: string;
   className?: string;
   offset?: number;
+  textOffsetX?: number;
+  textOffsetY?: string;
+  textTranslateX?: number;
+  textRotation?: number;
 }
 
 export const SimpleScrapbookArrow = ({
   direction = 'top-right',
   text,
   className,
-  offset = 0
+  offset = 0,
+  textOffsetX,
+  textOffsetY,
+  textTranslateX,
+  textRotation,
 }: SimpleScrapbookArrowProps) => {
   const directions = {
     'top-right': { 
@@ -96,9 +114,9 @@ export const SimpleScrapbookArrow = ({
       endX: 95 + offset, 
       endY: -20 + offset, 
       rotation: 50,
-      textOffsetX: 0.2,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
-      textOffsetY: '-10px', // ← ADJUST VERTICAL TEXT POSITION HERE
-      textTranslateX: 20,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
+      textOffsetX: textOffsetX ?? 0.2,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
+      textOffsetY: textOffsetY ?? '-10px', // ← ADJUST VERTICAL TEXT POSITION HERE
+      textTranslateX: textTranslateX ?? 20,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
       arrowImage: '/right_arrows.png'  // ← RIGHT ARROW IMAGE
     },
     'top-left': { 
@@ -107,10 +125,10 @@ export const SimpleScrapbookArrow = ({
       endX: -65 + offset, 
       endY: -10 + offset, 
       rotation: 120,
-      textOffsetX: -0.8,     // ← ADJUST HORIZONTAL TEXT POSITION HERE (lower = more left)
-      textOffsetY: '0px', // ← ADJUST VERTICAL TEXT POSITION HERE (Lower = more up)
-      textTranslateX: -40,   // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE (negative = left)
-      textRotation: 0,      // ← ADDITIONAL TEXT ROTATION IN DEGREES
+      textOffsetX: textOffsetX ?? -0.8,     // ← ADJUST HORIZONTAL TEXT POSITION HERE (lower = more left)
+      textOffsetY: textOffsetY ?? '0px', // ← ADJUST VERTICAL TEXT POSITION HERE (Lower = more up)
+      textTranslateX: textTranslateX ?? -40,   // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE (negative = left)
+      textRotation: textRotation ?? 0,      // ← ADDITIONAL TEXT ROTATION IN DEGREES
       arrowImage: '/left_arrows.png'  // ← LEFT ARROW IMAGE
     },
     'bottom-right': { 
@@ -119,9 +137,9 @@ export const SimpleScrapbookArrow = ({
       endX: 95 + offset, 
       endY: 95 - offset, 
       rotation: 5,
-      textOffsetX: 0.7,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
-      textOffsetY: '-10px', // ← ADJUST VERTICAL TEXT POSITION HERE
-      textTranslateX: 20,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
+      textOffsetX: textOffsetX ?? 0.7,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
+      textOffsetY: textOffsetY ?? '-10px', // ← ADJUST VERTICAL TEXT POSITION HERE
+      textTranslateX: textTranslateX ?? 20,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
       arrowImage: '/right_arrows.png'  // ← RIGHT ARROW IMAGE
     },
     'bottom-left': { 
@@ -130,9 +148,9 @@ export const SimpleScrapbookArrow = ({
       endX: -40 - offset, 
       endY: 85 - offset, 
       rotation: 200,
-      textOffsetX: -1.8,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
-      textOffsetY: '40px', // ← ADJUST VERTICAL TEXT POSITION HERE
-      textTranslateX: 40,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
+      textOffsetX: textOffsetX ?? -1.8,    // ← ADJUST HORIZONTAL TEXT POSITION HERE
+      textOffsetY: textOffsetY ?? '40px', // ← ADJUST VERTICAL TEXT POSITION HERE
+      textTranslateX: textTranslateX ?? 40,    // ← ADJUST TEXT TRANSLATION AFTER ROTATION HERE
       arrowImage: '/left_arrows.png'  // ← LEFT ARROW IMAGE
     },
   };

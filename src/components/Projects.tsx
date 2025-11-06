@@ -14,7 +14,7 @@ export const Projects = () => {
             <ScrapbookImage
               src="/projects_essential.jpg"
               alt="Ginger health shots"
-              arrowText="essential for the grind!"
+              arrowText="essential for the grind"
               arrowDirection="bottom-left"
               size="sm"
             />
@@ -26,9 +26,12 @@ export const Projects = () => {
             <ScrapbookImage
               src="/projects_teamwork.jpg"
               alt="Teamwork makes the dream work"
-              arrowText="community + connection = dream teamwork"
+              arrowText="community+connection\n = dream teamwork"
               arrowDirection="top-right"
               size="sm"
+              arrowTextOffsetX={0.3}
+              arrowTextOffsetY="-30px"
+              arrowTextTranslateX={25}
             />
           </div>
         </div>

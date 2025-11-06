@@ -56,7 +56,7 @@ export const Experience = () => {
               
               <div className="bg-background rounded-xl p-6 shadow-warm-sm hover:shadow-warm-md transition-shadow relative">
                 {/* Experience image */}
-                <div className="absolute top-4 right-4 opacity-80">
+                <div className="absolute top-4 right-4 opacity-90">
                   <ScrapbookImage
                     src={exp.image}
                     alt={`${exp.company} experience`}

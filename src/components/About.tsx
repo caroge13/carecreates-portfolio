@@ -10,7 +10,7 @@ export const About = () => {
         
         <div className="bg-background rounded-2xl p-8 md:p-12 shadow-warm-md relative">
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Hey there! I'm Caroline, but my friends call me Care. I'm a Computer Science and Business student at Western University with a passion for the intersection of business and technology, especially how to translate between the two. I love being creative (and need to be), and am obsessed with hobbies, nature, people, and talking about any of these three.
+            Hey there! I'm Caroline, but my friends call me <em>Care</em>. I'm a Computer Science and Business student at Western University with a passion for the intersection of business and technology, especially how to translate between the two. I love being creative (and need to be), and am obsessed with hobbies, nature, people, and talking about any of these three.
           </p>
           
           <div className="space-y-6">

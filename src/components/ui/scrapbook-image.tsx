@@ -9,6 +9,10 @@ interface ScrapbookImageProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
   rounded?: boolean;
+  arrowTextOffsetX?: number;
+  arrowTextOffsetY?: string;
+  arrowTextTranslateX?: number;
+  arrowTextRotation?: number;
 }
 
 export const ScrapbookImage = ({
@@ -19,6 +23,10 @@ export const ScrapbookImage = ({
   className,
   size = 'md',
   rounded = true,
+  arrowTextOffsetX,
+  arrowTextOffsetY,
+  arrowTextTranslateX,
+  arrowTextRotation,
 }: ScrapbookImageProps) => {
   const sizeClasses = {
     sm: 'w-32 h-32 md:w-40 md:h-40',
@@ -61,6 +69,10 @@ export const ScrapbookImage = ({
           text={arrowText}
           className="z-10"
           offset={10}
+          textOffsetX={arrowTextOffsetX}
+          textOffsetY={arrowTextOffsetY}
+          textTranslateX={arrowTextTranslateX}
+          textRotation={arrowTextRotation}
         />
       )}
     </div>
