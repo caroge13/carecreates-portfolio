@@ -47,18 +47,24 @@ export const Contact = () => {
         </div>
         
         <div className="border-t border-border pt-8">
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-4">
             © 2025 Caroline Ge. Built with <em>care</em> 🫶🏻
-            {" "}
+          </p>
+          <div className="flex justify-center">
             <a 
               href="https://github.com/caroge13/carecreates-portfolio" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
             >
-              <Github className="w-4 h-4" />
+              <Button
+                variant="outline"
+                className="bg-background border-2 border-primary text-foreground hover:bg-primary/10 rounded-full transition-colors"
+              >
+                <Github className="w-4 h-4 mr-2" />
+                view on github
+              </Button>
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </section>
