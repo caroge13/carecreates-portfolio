@@ -7,9 +7,9 @@ const experiences = [
     period: "May 2025 - August 2025",
     image: "/rbc.jpg",
     description: [
-      "Led feature development from ideation to launch",
-      "Conducted user interviews and synthesized insights",
-      "Collaborated with engineering and design teams"
+      "Designed and launched a centralized Jira intake platform adopted by 30+ stakeholders across tech, ops, and strategy",
+      "Build 10+ analytics models and Tableau dashboards to quantify automation ROI and optimize credit adjudication",
+      "Created Figma workflows that cut manual triage time by 40% and improved cross-functional visibility"
     ]
   },
   {
@@ -18,9 +18,9 @@ const experiences = [
     period: "September 2023 - Present",
     image: "/wfn.JPEG",
     description: [
-      "Achievement or responsibility",
-      "Another achievement or responsibility",
-      "One more achievement or responsibility"
+      "Scaled Western's largest biz-tech organization to 400+ members and 75+ execs, executing 15+ events annually",
+      "Built internal systems that cut coordination overhead and empowered VPs to deliver faster, clearer decisions",     
+      "Stepped in as strategic decision-maker and mentor, offering people-first guidance and resolving cross-team challenges to keep execution on track"
     ]
   },
   {
@@ -29,9 +29,9 @@ const experiences = [
     period: "May 2024 - December 2024",
     image: "/ppjv.jpg",
     description: [
-      "Analysed user data to inform product decisions",
-      "Created dashboards for tracking key metrics",
-      "Supported product roadmap planning"
+      "Led end-to-end process audits with >75% of recommendations implemented by leadership",
+      "Mapped and redesigned workflows that cut compliance friction and standardized cross-team processes",
+      "Delivered data-backed insights that informed strategic decisions across 6+ core business functions"
     ]
   }
 ];
