@@ -10,7 +10,7 @@ export interface Project {
   figmaLink?: string;
   image?: string;
   lifecycleContent?: {
-    [key: string]: string | string[] | (string | { main: string; subItems?: string[] })[];
+    [key: string]: string | string[] | (string | { main: string; subItems?: string[]; image?: string })[];
   };
   architectureContent?: string | string[] | Array<any>;
 }
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     status: "in progress",
     lifecycleStep: "development",
     description: "A website that helps users track every target company in a watchlist, and notifications as soon as job postings for these companies drop.",
-    impact: "Increased user engagement by 40% through improved onboarding flow",
+    impact: "Increased number of applications submitted on the day of release by 40%",
     skills: ["User Research", "Product Strategy", "Wireframing", "A/B Testing"],
     githubLink: "https://github.com/caroge13/internship-net",
     figmaLink: "https://figma.com/placeholder",
@@ -324,22 +324,25 @@ export const projects: Project[] = [
     id: "bounce-app-feature-improvement",
     title: "Bounce App Feature Improvement",
     status: "in progress",
-    lifecycleStep: "user research",
-    description: "Conducted market research and competitive analysis to identify opportunities in the EdTech space.",
-    impact: "Presented findings to stakeholders, informing product roadmap decisions",
+    lifecycleStep: "mvp",
+    description: "Bounce is an event ticketing platform that recently partnered with WFN. As an event organizer and user, I recognized some pain points and opportunities for improvement. Therefore, I've ideated a new feature that will address these.",
+    impact: "In contact with Bounce representatives, and will present project to decision-makers, influencing product roadmap decisions.",
     skills: ["Market Research", "Data Analysis", "Competitive Analysis", "Presentation"],
     githubLink: "https://github.com/placeholder",
     figmaLink: "https://figma.com/placeholder",
     image: "/project-bounce.jpg",
     lifecycleContent: {
-      "discovery": "Your custom content for discovery step here",
-      "user research": "Your custom content for user research step here",
+      "discovery - problem statement": "Bounce users who both organize and attend events through the web app platform struggle to distinguish between organizer-only and attendee-only features. This leads users to accidentally interact with features or use tools that are irrelevant to their intent.",
+      "discovery - user research": [
+        {main: "Example behaviours:", subItems: ["Organizers accidentally create an event under their personal Bounce account instead of under their organization user interest and clarity of value", "Organizers struggle to find where to purchase tickets to their own event, leading to them having to coordinate directly with the organizing team, which can lead to inefficiencies in documentation"] },
+        {main: "Why this matters:", subItems: ["After speaking with Bounce representatives, Bounce's strategic direction is to partner with professional student organizations as well and expand beyond 'bar nights'; right now, its brand image is that of a party life event platform. Therefore, they are actively sourcing partnerships with professional student organizations (WFN being one of them), and these organizations typically already operate within their university's student council (e.g., Western USC) or have a direct ticketing platforrm. For these student orgs to choose Bounce as a partner, especially with the additional fee, the event organization experience must be smoother, specifically for event organizers, who are also students likely using the platform to attend other local events."]},
+        {main: "Current state - user journey", image: "/placeholder.jpg"}
+      ],
       "feature prioritization & specification": "Your custom content for feature prioritization step here",
-      "design": "Your custom content for design step here",
-      "development": "Your custom content for development step here",
-      "mvp & testing": "Your custom content for MVP & testing step here",
-      "metrics": "Your custom content for metrics step here",
-      "iterations & improvements": "Your custom content for iterations step here"
+      "mvp": "Currently working on the MVP, Figma link above!",
+      "development": "This will be at the discretion of Bounce representatives.",
+      "testing & metrics": "Coming soon!",
+      "iterations & improvements": "Coming soon!"
     }
   },
   {
@@ -354,8 +357,8 @@ export const projects: Project[] = [
     figmaLink: "https://figma.com/placeholder",
     image: "/project-brainstation.jpg",
     lifecycleContent: {
-      "discovery": "Your custom content for discovery step here",
-      "user research": "Your custom content for user research step here",
+      "discovery - problem statement": "Your custom content for problem statement step here",
+      "discovery - user research": "Your custom content for user research step here",
       "feature prioritization & specification": "Coming soon!",
       "design": "Coming soon!",
       "development": "Coming soon!",

@@ -219,7 +219,7 @@ const ProjectDetail = () => {
                         <ul className="text-muted-foreground space-y-2">
                           {content.map((item, idx) => {
                             if (typeof item === 'object' && item !== null && 'main' in item) {
-                              const itemWithSub = item as { main: string; subItems?: string[] };
+                              const itemWithSub = item as { main: string; subItems?: string[]; image?: string };
                               return (
                                 <li key={idx} className="space-y-1">
                                   <div className="flex items-start">
@@ -235,6 +235,15 @@ const ProjectDetail = () => {
                                         </li>
                                       ))}
                                     </ul>
+                                  )}
+                                  {itemWithSub.image && (
+                                    <div className="ml-6 mt-3">
+                                      <img 
+                                        src={itemWithSub.image} 
+                                        alt="" 
+                                        className="max-w-md rounded-lg shadow-warm-md"
+                                      />
+                                    </div>
                                   )}
                                 </li>
                               );
