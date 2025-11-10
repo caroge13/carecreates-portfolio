@@ -324,7 +324,7 @@ export const projects: Project[] = [
     id: "bounce-app-feature-improvement",
     title: "Bounce App Feature Improvement",
     status: "in progress",
-    lifecycleStep: "mvp",
+    lifecycleStep: "feature specification",
     description: "Bounce is an event ticketing platform that recently partnered with WFN. As an event organizer and user, I recognized some pain points and opportunities for improvement. Therefore, I've ideated a new feature that will address these.",
     impact: "In contact with Bounce representatives, and will present project to decision-makers, influencing product roadmap decisions.",
     skills: ["Market Research", "Data Analysis", "Competitive Analysis", "Presentation"],
@@ -336,10 +336,11 @@ export const projects: Project[] = [
       "discovery - user research": [
         {main: "Example behaviours:", subItems: ["Organizers accidentally create an event under their personal Bounce account instead of under their organization user interest and clarity of value", "Organizers struggle to find where to purchase tickets to their own event, leading to them having to coordinate directly with the organizing team, which can lead to inefficiencies in documentation"] },
         {main: "Why this matters:", subItems: ["After speaking with Bounce representatives, Bounce's strategic direction is to partner with professional student organizations as well and expand beyond 'bar nights'; right now, its brand image is that of a party life event platform. Therefore, they are actively sourcing partnerships with professional student organizations (WFN being one of them), and these organizations typically already operate within their university's student council (e.g., Western USC) or have a direct ticketing platforrm. For these student orgs to choose Bounce as a partner, especially with the additional fee, the event organization experience must be smoother, specifically for event organizers, who are also students likely using the platform to attend other local events."]},
-        {main: "Current state - user journey", image: "/placeholder.jpg"}
+        {main: "Current state - user journey", image: "/Current State - User Journey.jpg"}
       ],
-      "feature prioritization & specification": "Your custom content for feature prioritization step here",
-      "mvp": "Currently working on the MVP, Figma link above!",
+      "feature prioritization": "Insert my text here",
+      "feature specification (FRD)": "Currently working on this!",
+      "mvp": "Coming soon, Figma link above will become active!",
       "development": "This will be at the discretion of Bounce representatives.",
       "testing & metrics": "Coming soon!",
       "iterations & improvements": "Coming soon!"
