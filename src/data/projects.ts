@@ -10,7 +10,7 @@ export interface Project {
   figmaLink?: string;
   image?: string;
   lifecycleContent?: {
-    [key: string]: string | string[] | (string | { main: string; subItems?: string[]; image?: string })[];
+    [key: string]: string | string[] | (string | { main: string; subItems?: string[]; image?: string; table?: { rows: string[][] } })[];
   };
   architectureContent?: string | string[] | Array<any>;
 }
@@ -336,9 +336,15 @@ export const projects: Project[] = [
       "discovery - user research": [
         {main: "Example behaviours:", subItems: ["Organizers accidentally create an event under their personal Bounce account instead of under their organization user interest and clarity of value", "Organizers struggle to find where to purchase tickets to their own event, leading to them having to coordinate directly with the organizing team, which can lead to inefficiencies in documentation"] },
         {main: "Why this matters:", subItems: ["After speaking with Bounce representatives, Bounce's strategic direction is to partner with professional student organizations as well and expand beyond 'bar nights'; right now, its brand image is that of a party life event platform. Therefore, they are actively sourcing partnerships with professional student organizations (WFN being one of them), and these organizations typically already operate within their university's student council (e.g., Western USC) or have a direct ticketing platforrm. For these student orgs to choose Bounce as a partner, especially with the additional fee, the event organization experience must be smoother, specifically for event organizers, who are also students likely using the platform to attend other local events."]},
+        {main: "Target user persona:", subItems: ["Users who organize/manage events on behalf of an organization but also attends other events personally."]},
         {main: "Current state - user journey", image: "/Current State - User Journey.jpg"}
       ],
-      "feature prioritization": "Insert my text here",
+      "feature ideation & prioritization": [
+        {main: "Possible features:", subItems: ["Different dashboard UI for attendee vs. organizer modes", "Clearer role switch toggle (header taskbar)", "Role-specific footer taskbar - 'Feed', 'Explore', 'Tickets', 'Chat' for Attendee, 'Host Event', Event Analytics', 'Chat' for Organizer", "Distinct colour palette for attendee vs. organizer modes", "Need to still align with Bounce's colour palette", "Smart role detection", "Automatically shows organizer tools only when the user is viewing owned events"]},
+        {main: "Prioritization - RICE:", table: { rows: [['Concept', 'Reach', 'Impact', 'Confidence', 'Effort'], ['Different Dashboard UI', 'High', 'High', 'High', 'Medium'], ['Role-specific Colour Palette', 'Medium', 'Medium', 'High', 'Low'], ['Smart Role Detection', 'Medium', 'High', 'Medium', 'High']] } },
+        {main: "Feature choice: Role-specific distinct dashboard UI"},
+        {main: "Future state - user journey", image: "Future State - User Journey.jpg"}
+      ],
       "feature specification (FRD)": "Currently working on this!",
       "mvp": "Coming soon, Figma link above will become active!",
       "development": "This will be at the discretion of Bounce representatives.",
@@ -358,8 +364,24 @@ export const projects: Project[] = [
     figmaLink: "https://figma.com/placeholder",
     image: "/project-brainstation.jpg",
     lifecycleContent: {
-      "discovery - problem statement": "Your custom content for problem statement step here",
-      "discovery - user research": "Your custom content for user research step here",
+      // EDIT
+      "discovery - problem statement": [
+        {main: "Hypothesis", subItems: ["Young adults feel disconnected from their lives because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fufillment."]},
+        {main: "Research hypothesis statement", subItems: ["I believe that the main reason why young adults feel disconnected from their lives is because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fulfillment.", "I will know this to be true when 7 out of 10 interview participants associate their feelings of disconnection, or living life on “autopilot” with excessive consumption or reduced time allocated to hobbies/creation."]}
+      ],
+      "discovery - hypothesis": [
+        {main: "Hypothesis", subItems: ["Young adults feel disconnected from their lives because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fufillment."]},
+        {main: "Research hypothesis statement", subItems: ["I believe that the main reason why young adults feel disconnected from their lives is because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fulfillment.", "I will know this to be true when 7 out of 10 interview participants associate their feelings of disconnection, or living life on “autopilot” with excessive consumption or reduced time allocated to hobbies/creation."]}
+      ],
+      "discovery - unique value proposition": [
+        {main: "Direct competitors", subItems: ["Finch: Gamifies self-care and reflection through a virtual pet that \"grows\" as you check in, set goals, reflect", "Emotional grounding through reflection and affirmation", "Weakness: Dopamine still tied to streaks and gamification, not true presence --> users feel productive, but not necessarily translating to fulfillment outside of the app", "Reflection, not creative doing", "Skillshare / Domestika: Provides online classes across creative hobbies", "Helps people start hobbies and explore creativity", "Weakness: Consumption-based, no contribution to ocnsistency/fulfillment", "Consumption, not action", "Stoic / Intellect / Headspace: Helps users reflect, meditate, build emotional awareness"]},
+        {main: "Indirect competitors", subItems: ["TikTok / Instagram Reels (short-form content)", "Spotify / YouTube", "Journalling apps", "Therapy/coaching tools"]},
+        {main: "UVP", subItems: ["Bridging the gap between mindfulness, creation, and connection."]}
+      ],
+      "discovery - user interviews & personas": [
+        {main: "Interview questions", subItems: [""]},
+        {main: "Personas", subItems: [""]}
+      ],
       "feature prioritization & specification": "Coming soon!",
       "design": "Coming soon!",
       "development": "Coming soon!",
