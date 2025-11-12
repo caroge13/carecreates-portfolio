@@ -1,3 +1,5 @@
+import { ChartTooltip } from "@/components/ui/chart";
+
 export interface Project {
   id: string;
   title: string;
@@ -10,9 +12,10 @@ export interface Project {
   figmaLink?: string;
   image?: string;
   lifecycleContent?: {
-    [key: string]: string | string[] | (string | { main: string; subItems?: string[]; image?: string; table?: { rows: string[][] } })[];
+    [key: string]: string | string[] | (string | { main: string; subItems?: string[]; numberedItems?: Array<{ main: string; subItems?: string[] }>; image?: string; table?: { rows: string[][] } })[];
   };
   architectureContent?: string | string[] | Array<any>;
+  frdContent?: string | string[] | Array<any>;
 }
 
 export const projects: Project[] = [
@@ -23,7 +26,7 @@ export const projects: Project[] = [
     lifecycleStep: "development",
     description: "A website that helps users track every target company in a watchlist, and notifications as soon as job postings for these companies drop.",
     impact: "Increased number of applications submitted on the day of release by 40%",
-    skills: ["User Research", "Product Strategy", "Wireframing", "A/B Testing"],
+    skills: ["Full-Stack Development", "Product Development", "System Architecture", "User Research", "Technical Implementation", "Database Design", "API Integration"],
     githubLink: "https://github.com/caroge13/internship-net",
     figmaLink: "https://figma.com/placeholder",
     image: "/project-internshipnet.jpg",
@@ -325,41 +328,49 @@ export const projects: Project[] = [
     title: "Bounce App Feature Improvement",
     status: "in progress",
     lifecycleStep: "feature specification",
-    description: "Bounce is an event ticketing platform that recently partnered with WFN. As an event organizer and user, I recognized some pain points and opportunities for improvement. Therefore, I've ideated a new feature that will address these.",
+    description: "Bounce is an event ticketing platform that recently partnered with WFN. As an event organizer and attendee, I recognized some pain points and opportunities for improvement. Therefore, I've ideated a new feature that will address these.",
     impact: "In contact with Bounce representatives, and will present project to decision-makers, influencing product roadmap decisions.",
-    skills: ["Market Research", "Data Analysis", "Competitive Analysis", "Presentation"],
+    skills: ["User Research", "Problem Identification", "Feature Ideation", "Prioritization (RICE)", "Stakeholder Communication", "Real-World Application"],
     githubLink: "https://github.com/placeholder",
     figmaLink: "https://figma.com/placeholder",
-    image: "/project-bounce.jpg",
+    image: "/bounce_logo.png",
     lifecycleContent: {
       "discovery - problem statement": "Bounce users who both organize and attend events through the web app platform struggle to distinguish between organizer-only and attendee-only features. This leads users to accidentally interact with features or use tools that are irrelevant to their intent.",
       "discovery - user research": [
         {main: "Example behaviours:", subItems: ["Organizers accidentally create an event under their personal Bounce account instead of under their organization user interest and clarity of value", "Organizers struggle to find where to purchase tickets to their own event, leading to them having to coordinate directly with the organizing team, which can lead to inefficiencies in documentation"] },
         {main: "Why this matters:", subItems: ["After speaking with Bounce representatives, Bounce's strategic direction is to partner with professional student organizations as well and expand beyond 'bar nights'; right now, its brand image is that of a party life event platform. Therefore, they are actively sourcing partnerships with professional student organizations (WFN being one of them), and these organizations typically already operate within their university's student council (e.g., Western USC) or have a direct ticketing platforrm. For these student orgs to choose Bounce as a partner, especially with the additional fee, the event organization experience must be smoother, specifically for event organizers, who are also students likely using the platform to attend other local events."]},
         {main: "Target user persona:", subItems: ["Users who organize/manage events on behalf of an organization but also attends other events personally."]},
-        {main: "Current state - user journey", image: "/Current State - User Journey.jpg"}
+        {main: "Current state - user journey", image: "/Current State - User Journey.png"}
       ],
       "feature ideation & prioritization": [
-        {main: "Possible features:", subItems: ["Different dashboard UI for attendee vs. organizer modes", "Clearer role switch toggle (header taskbar)", "Role-specific footer taskbar - 'Feed', 'Explore', 'Tickets', 'Chat' for Attendee, 'Host Event', Event Analytics', 'Chat' for Organizer", "Distinct colour palette for attendee vs. organizer modes", "Need to still align with Bounce's colour palette", "Smart role detection", "Automatically shows organizer tools only when the user is viewing owned events"]},
+        {main: "Possible features:", numberedItems: [
+          {main: "Different dashboard UI for attendee vs. organizer modes", subItems: ["Clearer role switch toggle (header taskbar)", "Role-specific footer taskbar - 'Feed', 'Explore', 'Tickets', 'Chat' for Attendee, 'Host Event', Event Analytics', 'Chat' for Organizer"]},
+          {main: "Distinct colour palette for attendee vs. organizer modes", subItems: ["Need to still align with Bounce's colour palette"]},
+          {main: "Smart role detection", subItems: ["Automatically shows organizer tools only when the user is viewing owned events"]}
+        ]},
         {main: "Prioritization - RICE:", table: { rows: [['Concept', 'Reach', 'Impact', 'Confidence', 'Effort'], ['Different Dashboard UI', 'High', 'High', 'High', 'Medium'], ['Role-specific Colour Palette', 'Medium', 'Medium', 'High', 'Low'], ['Smart Role Detection', 'Medium', 'High', 'Medium', 'High']] } },
-        {main: "Feature choice: Role-specific distinct dashboard UI"},
-        {main: "Future state - user journey", image: "Future State - User Journey.jpg"}
+        {main: "Feature choice:", subItems: ["Role-specific distinct dashboard UI"]},
+        {main: "Future state - user journey:", image: "/Future State - User Journey.png"}
       ],
-      "feature specification (FRD)": "Currently working on this!",
-      "mvp": "Coming soon, Figma link above will become active!",
+      "feature specification": "Currently working on this!",
+      "mvp & OKRs": "Coming soon!",
       "development": "This will be at the discretion of Bounce representatives.",
-      "testing & metrics": "Coming soon!",
-      "iterations & improvements": "Coming soon!"
-    }
+      "iterations & improvements": "Coming soon!",
+      "project presentation": "Figma link above will become active!"
+    },
+    frdContent: [
+      { type: 'heading', text: 'feature requirements document' },
+      "FRD content coming soon..."
+    ]
   },
   {
     id: "brainstation-course-project",
     title: "BrainStation Product Management Certification Course",
     status: "in progress",
-    lifecycleStep: "discovery",
+    lifecycleStep: "discovery - user research",
     description: "Course led by Njeri Grevious, Senior PM - Copilot Experiences @ Microsoft. Creating a product at the intersection of social connection and productivity. Project presentation and feedback takes place December 17, 2025.",
     impact: "",
-    skills: ["Agile", "User Stories", "Analytics", "Cross-functional Collaboration"],
+    skills: ["Product Lifecycle Management", "Discovery & Hypothesis Testing", "User Research & Personas", "Competitive Analysis", "Value Proposition", "Product Strategy"],
     githubLink: "https://github.com/placeholder",
     figmaLink: "https://figma.com/placeholder",
     image: "/project-brainstation.jpg",
@@ -378,7 +389,7 @@ export const projects: Project[] = [
         {main: "Indirect competitors", subItems: ["TikTok / Instagram Reels (short-form content)", "Spotify / YouTube", "Journalling apps", "Therapy/coaching tools"]},
         {main: "UVP", subItems: ["Bridging the gap between mindfulness, creation, and connection."]}
       ],
-      "discovery - user interviews & personas": [
+      "discovery - user research": [
         {main: "Interview questions", subItems: [""]},
         {main: "Personas", subItems: [""]}
       ],

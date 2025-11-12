@@ -10,7 +10,7 @@ export const Contact = () => {
           let's connect :)
         </h2>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          i'm actively seeking product management internship opportunities for summer 2026. 
+          i'm actively seeking internship opportunities for summer 2026. 
           let's chat about how i can contribute to your team!
         </p>
         

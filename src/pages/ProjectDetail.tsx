@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrapbookImage } from "@/components/ui/scrapbook-image";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const lifecycleSteps = [
   "discovery",
@@ -186,12 +187,22 @@ const ProjectDetail = () => {
               const isCurrentStep = project.status === "in progress" && 
                 (projectStepLower.includes(stepLower) || stepLower.includes(projectStepLower));
               
+              // Check if step is completed
+              const isCompleted = project.status === "completed" || 
+                (project.status === "in progress" && !isCurrentStep && 
+                 projectLifecycleSteps.findIndex((key) => {
+                   const keyLower = (stepDisplayNames[key] || key).toLowerCase();
+                   return projectStepLower.includes(keyLower) || keyLower.includes(projectStepLower);
+                 }) > index);
+              
               return (
               <div key={stepKey} className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
                   isCurrentStep
                     ? "bg-orange-500/20 text-orange-700 dark:text-orange-400"
+                    : isCompleted
+                    ? "bg-green-500/20 text-green-700 dark:text-green-400"
                     : "bg-muted text-muted-foreground"
                 }`}>
                   {index + 1}
@@ -211,6 +222,8 @@ const ProjectDetail = () => {
                   // Use content directly from the project's lifecycleContent
                   const isDevelopment = stepKey.toLowerCase().includes("development");
                   const hasArchitecture = project.architectureContent;
+                  const isFRD = stepKey.toLowerCase().includes("feature specification") || stepKey.toLowerCase().includes("frd");
+                  const hasFRD = project.frdContent;
                   
                   if (Array.isArray(content)) {
                     // Check if array contains objects with main/subItems structure
@@ -219,7 +232,13 @@ const ProjectDetail = () => {
                         <ul className="text-muted-foreground space-y-2">
                           {content.map((item, idx) => {
                             if (typeof item === 'object' && item !== null && 'main' in item) {
-                              const itemWithSub = item as { main: string; subItems?: string[]; image?: string };
+                              const itemWithSub = item as { 
+                                main: string; 
+                                subItems?: string[]; 
+                                numberedItems?: Array<{ main: string; subItems?: string[] }>;
+                                image?: string;
+                                table?: { rows: string[][] };
+                              };
                               return (
                                 <li key={idx} className="space-y-1">
                                   <div className="flex items-start">
@@ -235,6 +254,53 @@ const ProjectDetail = () => {
                                         </li>
                                       ))}
                                     </ul>
+                                  )}
+                                  {itemWithSub.numberedItems && itemWithSub.numberedItems.length > 0 && (
+                                    <ol className="ml-6 space-y-2 list-decimal list-inside">
+                                      {itemWithSub.numberedItems.map((numberedItem, numIdx) => (
+                                        <li key={numIdx} className="space-y-1">
+                                          <span className="text-muted-foreground">{numberedItem.main}</span>
+                                          {numberedItem.subItems && numberedItem.subItems.length > 0 && (
+                                            <ul className="ml-6 mt-1 space-y-1">
+                                              {numberedItem.subItems.map((subItem, subIdx) => (
+                                                <li key={subIdx} className="flex items-start text-sm text-muted-foreground/80">
+                                                  <span className="text-primary mr-2">◦</span>
+                                                  <span>{subItem}</span>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          )}
+                                        </li>
+                                      ))}
+                                    </ol>
+                                  )}
+                                  {itemWithSub.table && (
+                                    <div className="ml-6 mt-3 overflow-x-auto">
+                                      <Table>
+                                        {itemWithSub.table.rows.length > 0 && (
+                                          <TableHeader>
+                                            <TableRow>
+                                              {itemWithSub.table.rows[0].map((header, headerIdx) => (
+                                                <TableHead key={headerIdx} className="text-foreground font-semibold">
+                                                  {header}
+                                                </TableHead>
+                                              ))}
+                                            </TableRow>
+                                          </TableHeader>
+                                        )}
+                                        <TableBody>
+                                          {itemWithSub.table.rows.slice(1).map((row, rowIdx) => (
+                                            <TableRow key={rowIdx}>
+                                              {row.map((cell, cellIdx) => (
+                                                <TableCell key={cellIdx} className="text-muted-foreground align-top">
+                                                  {cell}
+                                                </TableCell>
+                                              ))}
+                                            </TableRow>
+                                          ))}
+                                        </TableBody>
+                                      </Table>
+                                    </div>
                                   )}
                                   {itemWithSub.image && (
                                     <div className="ml-6 mt-3">
@@ -272,6 +338,15 @@ const ProjectDetail = () => {
                             <ExternalLink className="w-4 h-4" />
                           </Link>
                         )}
+                        {isFRD && hasFRD && (
+                          <Link 
+                            to={`/project/${project.id}/frd`}
+                            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium mt-4"
+                          >
+                            <span>feature requirements document (FRD)</span>
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        )}
                       </div>
                     );
                   }
@@ -287,6 +362,15 @@ const ProjectDetail = () => {
                           className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
                         >
                           <span>detailed architecture documentation</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </Link>
+                      )}
+                      {isFRD && hasFRD && (
+                        <Link 
+                          to={`/project/${project.id}/frd`}
+                          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                        >
+                          <span>feature requirements document (FRD)</span>
                           <ExternalLink className="w-4 h-4" />
                         </Link>
                       )}

@@ -9,6 +9,7 @@ A personal portfolio website showcasing my work, projects, and experiences!
 - **Projects Showcase**: Detailed project cards with status indicators and lifecycle tracking
   - Project detail pages with custom lifecycle documentation
   - Architecture documentation pages for technical projects
+  - Feature Requirements Document (FRD) pages for feature specification projects
   - GitHub and Figma links for each project
 - **Experience Timeline**: Professional experience with photos and detailed descriptions
 - **Skills**: Technical and professional skills display
@@ -45,6 +46,7 @@ portfolio-website/
 │   │   ├── Index.tsx        # Main landing page
 │   │   ├── ProjectDetail.tsx      # Individual project pages
 │   │   ├── ArchitectureDetail.tsx # Architecture documentation pages
+│   │   ├── FRDDetail.tsx   # Feature Requirements Document pages
 │   │   ├── Resume.tsx       # Resume viewer
 │   │   └── NotFound.tsx     # 404 page
 │   ├── data/
@@ -66,10 +68,31 @@ portfolio-website/
 ### Project Content
 
 Project details and lifecycle content are managed in `src/data/projects.ts`. Each project can have:
-- Custom lifecycle steps and content
-- Architecture documentation
+- Custom lifecycle steps and content (each project defines its own unique lifecycle steps)
+- Architecture documentation (for technical/full-stack projects like InternshipNet)
+- Feature Requirements Document (FRD) content (for feature specification projects like Bounce)
 - GitHub and Figma links
 - Status indicators (completed/in progress with lifecycle step)
+- Skills array reflecting the project's focus and learnings
+
+### Project Types
+
+The portfolio showcases three types of projects:
+
+1. **Full-Stack Product Development** (InternshipNet)
+   - Complete product from concept to implementation
+   - Full-stack development, system architecture, technical implementation
+   - Architecture documentation pages
+
+2. **Feature Improvement** (Bounce App)
+   - Real-world feature ideation and specification
+   - User research, problem identification, prioritization
+   - Feature Requirements Document (FRD) pages
+
+3. **Product Management Coursework** (BrainStation)
+   - Comprehensive product lifecycle management
+   - Discovery, hypothesis testing, competitive analysis
+   - Detailed product strategy documentation
 
 ### Adding New Projects
 
@@ -78,12 +101,34 @@ Project details and lifecycle content are managed in `src/data/projects.ts`. Eac
    - `id`: Unique identifier (used in URLs)
    - `title`: Project name
    - `status`: "completed" or "in progress"
-   - `lifecycleStep`: Current step (if in progress)
+   - `lifecycleStep`: Current step key (if in progress) - must match a key in `lifecycleContent`
    - `description`: Short description
    - `impact`: Impact statement
-   - `skills`: Array of skills used
+   - `skills`: Array of skills that reflect the project's focus and learnings
    - `lifecycleContent`: Object with custom lifecycle steps and content
-   - `architectureContent`: Array for architecture documentation (optional)
+     - Each key is a lifecycle step name
+     - Content can be strings, arrays, or complex objects with bullet points, numbered lists, tables, and images
+   - `architectureContent`: Array for architecture documentation (optional, for technical projects)
+   - `frdContent`: Array for Feature Requirements Document content (optional, for feature specification projects)
+   - `githubLink`: GitHub repository URL (optional)
+   - `figmaLink`: Figma design URL (optional)
+   - `image`: Project image path (optional)
+
+### Lifecycle Content Structure
+
+Lifecycle content supports various content types:
+- **Simple text**: String values
+- **Bullet points**: Arrays of strings
+- **Complex structures**: Objects with `main`, `subItems`, `numberedItems`, `table`, and `image` properties
+- **Numbered lists**: Use `numberedItems` array for numbered lists with sub-bullets
+- **Tables**: Use `table` property with `rows` array (first row becomes header)
+- **Images**: Use `image` property with image path
+
+### Status Indicators
+
+- **Green numbers**: Completed lifecycle steps
+- **Orange numbers**: Current step (in progress projects)
+- **Muted numbers**: Future steps (not yet started)
 
 ### Customizing Content
 
