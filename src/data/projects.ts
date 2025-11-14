@@ -353,6 +353,7 @@ export const projects: Project[] = [
         {main: "Future state - user journey:", image: "/Future State - User Journey.png"}
       ],
       "feature specification": "Currently working on this!",
+      // embed figma mockup link
       "mvp & OKRs": "Coming soon!",
       "development": "This will be at the discretion of Bounce representatives.",
       "iterations & improvements": "Coming soon!",
@@ -387,7 +388,7 @@ export const projects: Project[] = [
       "discovery - unique value proposition": [
         {main: "Direct competitors", subItems: ["Finch: Gamifies self-care and reflection through a virtual pet that \"grows\" as you check in, set goals, reflect", "Emotional grounding through reflection and affirmation", "Weakness: Dopamine still tied to streaks and gamification, not true presence --> users feel productive, but not necessarily translating to fulfillment outside of the app", "Reflection, not creative doing", "Skillshare / Domestika: Provides online classes across creative hobbies", "Helps people start hobbies and explore creativity", "Weakness: Consumption-based, no contribution to ocnsistency/fulfillment", "Consumption, not action", "Stoic / Intellect / Headspace: Helps users reflect, meditate, build emotional awareness"]},
         {main: "Indirect competitors", subItems: ["TikTok / Instagram Reels (short-form content)", "Spotify / YouTube", "Journalling apps", "Therapy/coaching tools"]},
-        {main: "UVP", subItems: ["Bridging the gap between mindfulness, creation, and connection."]}
+        {main: "UVP", subItems: ["For young adults who want to break their consumption habits and make time for meaningful hobbies, our product provides a guided space to start and sustain creative rituals so that they can experience consistent presence and long-term fulfillment."]},
       ],
       "discovery - user research": [
         {main: "Interview questions", subItems: [""]},
