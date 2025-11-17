@@ -3,11 +3,11 @@ import { Badge } from "@/components/ui/badge";
 const skillCategories = [
   {
     category: "product management",
-    skills: ["Product Strategy", "Roadmap Planning", "User Research", "A/B Testing", "Analytics", "Feature Prioritization", "Business Requirements", "Vibe Coding"]
+    skills: ["Product Strategy", "Roadmap Planning", "User Research", "Prototyping", "Analytics", "Feature Prioritization", "Business Requirements"]
   },
   {
     category: "technical",
-    skills: ["SQL", "Python", "Figma", "Notion", "Jira", "Confluence", "Tableau", "Java", "R", "React.js", "Microsoft 365"]
+    skills: ["SQL", "Python", "Figma", "Notion", "Jira", "Confluence", "Tableau", "Java", "R", "React", "Microsoft 365"]
   },
   {
     category: "soft skills",
