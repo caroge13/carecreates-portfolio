@@ -7,9 +7,9 @@ const experiences = [
     period: "May 2025 - August 2025",
     image: "/rbc.jpg",
     description: [
-      "Designed and launched a centralized Jira intake platform adopted by 30+ stakeholders across tech, ops, and strategy",
+      "Designed and shipped a centralized Jira intake feature adopted by 30+ stakeholders across tech, ops, and strategy",
       "Build 10+ analytics models and Tableau dashboards to quantify automation ROI and optimize credit adjudication",
-      "Created Figma workflows that cut manual triage time by 40% and improved cross-functional visibility"
+      "Created Figma workflows that cut manual triage time and improved cross-functional visibility"
     ]
   },
   {
@@ -74,7 +74,7 @@ export const Experience = () => {
                   <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
                 </div>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-2 pr-24">
                   {exp.description.map((item, idx) => (
                     <li key={idx} className="text-muted-foreground flex items-start">
                       <span className="text-primary mr-2">•</span>
