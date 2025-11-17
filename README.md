@@ -75,25 +75,6 @@ Project details and lifecycle content are managed in `src/data/projects.ts`. Eac
 - Status indicators (completed/in progress with lifecycle step)
 - Skills array reflecting the project's focus and learnings
 
-### Project Types
-
-The portfolio showcases three types of projects:
-
-1. **Full-Stack Product Development** (InternshipNet)
-   - Complete product from concept to implementation
-   - Full-stack development, system architecture, technical implementation
-   - Architecture documentation pages
-
-2. **Feature Improvement** (Bounce App)
-   - Real-world feature ideation and specification
-   - User research, problem identification, prioritization
-   - Feature Requirements Document (FRD) pages
-
-3. **Product Management Coursework** (BrainStation)
-   - Comprehensive product lifecycle management
-   - Discovery, hypothesis testing, competitive analysis
-   - Detailed product strategy documentation
-
 ### Adding New Projects
 
 1. Open `src/data/projects.ts`
