@@ -328,7 +328,7 @@ export const projects: Project[] = [
     id: "bounce-app-feature-improvement",
     title: "Bounce App Feature Improvement",
     status: "in progress",
-    lifecycleStep: "feature specification",
+    lifecycleStep: "mvp & OKRs",
     description: "Bounce is an event ticketing platform that recently partnered with WFN. As an event organizer and attendee, I recognized some pain points and opportunities for improvement. Therefore, I've ideated a new feature that will address these.",
     impact: "In contact with Bounce representatives, and will present project to decision-makers, influencing product roadmap decisions.",
     skills: ["User Research", "Problem Identification", "Feature Ideation", "Prioritization (RICE)", "Stakeholder Communication", "Real-World Application"],
@@ -353,56 +353,55 @@ export const projects: Project[] = [
         {main: "Feature choice:", subItems: ["Role-specific distinct dashboard UI"]},
         {main: "Future state - user journey:", image: "/Future State - User Journey.png"}
       ],
-      "feature specification": "Currently working on this!",
-      // embed figma mockup link
+      "feature specification": "Click on the FRD!",
       "mvp & OKRs": "Coming soon!",
+        // embed figma mockup link
       "development": "This will be at the discretion of Bounce representatives.",
       "iterations & improvements": "Coming soon!",
       "project presentation": "Figma link above will become active!"
     },
     frdContent: [
-      { type: 'heading', text: "feature requirements document" },
       // feature
-      {type: 'subheading', text: "feature"},
+      {type: 'heading', text: "feature"},
       {main: "Host/Attendee Mode Toggle for Bounce Web App"},
       // tl;dr
-      {type: 'subheading', text: "tl;dr"},
+      {type: 'heading', text: "tl;dr"},
       {main: "A feature add to the Bounce browser web app that adds distinct 'Host' and 'Attendee' modes for dual-role Bounce users, with role-specific header toggle and footer navigation tabs. This addresses ocnfusion and inefficiency experienced by users who both organize events for their organization and attend local events as attendees, streamlining workflows and reducing support friction."},
       // goals
-      {type: 'subheading', text: "goals"},
+      {type: 'heading', text: "goals"},
       {main: "Business Goals", subItems: ["Reduce support tickes related to account/role confusion by 40%", "Increase user retention and engagemement among dual-role users", "Improve event creation efficiency to drive more hosted events", "Strengthen platform stickiness for high-value organizational users, aligning with strategic direction of partnership with professional organizations"]},
       {main: "Users Goals", subItems: ["Seamlessly switch between hosting and attending contexts", "Access role-appropriate tools and information quickly", "Reduce cognitive load when navigating between different use cases", "Complete event creation and management tasks more efficiently"]},
       {main: "Non-Goals", subItems: ["Mobile app implementation (web browser only)", "Separate account creation or login flows", "Changes to existing event discovery algorithms", "Integration with third-party calendar systems"]},
       // user stories
-      {type: 'subheading', text: "user stories"},
+      {type: 'heading', text: "user stories"},
       // put user stories here
-      {main: "Dedicated David, Lead Singer of a local band", subItems: "As a gig organizer, I want a clear Host Mode so I can manage gigs without mixing them up with similar music events I attend."},
-      {main: "Overcommitted Olivia, President of a professional student club", subItems: "As a club president, I want a fast way to switch roles so I don't accidentally act as an attendee when organizing events, blurring the lines between my personal life and professional role."},
-      {main: "Multitasking Michelle, Venue Manager of a local restaurant", subItems: "As a venue manager, I want organizer-specific tools in one place so I can run events quickly between my other tasks."},
+      {main: "Dedicated David, Lead Singer of a local band", subItems: ["As a gig organizer, I want a clear Host Mode so I can manage gigs without mixing them up with similar music events I attend."]},
+      {main: "Overcommitted Olivia, President of a professional student club", subItems: ["As a club president, I want a fast way to switch roles so I don't accidentally act as an attendee when organizing events, blurring the lines between my personal life and professional role."]},
+      {main: "Multitasking Michelle, Venue Manager of a local restaurant", subItems: ["As a venue manager, I want organizer-specific tools in one place so I can run events quickly between my other tasks."]},
       // functional requirements
-      {type: 'subheading', text: "functional requirements"},
+      {type: 'heading', text: "functional requirements"},
       {main: "Priority 1 (MVP):", subItems: ["Header toggle switch between 'Host' and 'Attendee' modes with clear visual distinction", "Mode-specific footer navigation tabs (Host: Create Event, Event Analytics, Chat; Attendee: Feed, Explore, Tickets, Chat)"]},
       {main: "Priority 2 (Enhancement):", subItems: ["Contextual mode suggestions based on user behaviour patterns", "Quick-switch shortcuts and keyboard navigation", "Mode-specific dashboard customization", "Enhanced analytics views for host mode"]},
       {main: "Priority 3 (Future):", subItems: ["Role-based notification preferences", "Advanced host tools integration", "Attendee socila features expansion"]},
       // user experience
-      {type: 'subheading', text: "user experience"},
+      {type: 'heading', text: "user experience"},
       {main: "Initial user flow: First-time dual-role users see onboarding tooltip explaining toggle functionality"},
       {main: "Mode switching: Single-click toggle in header with smooth transition animation and confirmation of active mode"},
       {main: "Navigation consistency: Chat remains available in both modes, but other tabs update based on selected role"},
       {main: "Visual clarity: Distinct colour schemes differentiate modes without overwhelming UI"},
       {main: "Edge cases and UI notes:", subItems: ["Handle users mid-task when switching modes (Save draft states, show appropriate warnings", "Graceful fallback fi user permissions don't match selected mode", "Clear error messaging for role-specific actions attempted in wrong mode", "Responsive design considerations for different screen sizes"]},
       // narrative
-      {type: 'subheading', text: "narrative"},
+      {type: 'heading', text: "narrative"},
       {main: "It's a Tuesday morning, and Overcommitted Olivia needs to finalize details for her professional student club's upcoming conference. She opens Bounce and immediately sees she's in Attendee mode from browsing weekend events the last time she used platform. One click on the header toggle switches her ot Host mode, where her existing event draft, analytics from last month's event, and creation tools are prominently displayed. She publishes the event in under 5 minutes."},
       {main: "Later that evening, happy that she's published the event and waiting for sign-ups, Overcommitted Olivia switches back to Attendee mode to browse local networking events. The interface nwo shows her personal ticket history, personalized event recommendations, and community feed, exactly what she needs as an event-goer! No confusion, no wasted clicks, just the right tools at the right time."},
-      {type: 'subheading', text: 'success metrics'},
+      {type: 'heading', text: 'success metrics'},
       {main: "Adoption: ≥60% of dual-role userse engage with toggle within first 30 days"},
       {main: "Engagement: +20% average time spent in Host Mode per active organizer vs. baseline"},
       {main: "Error Reduction: -40% support tickets about wrong account/event ownership issues"},
       {main: "Efficiency: Event creation time reduced by 2 minutes"},
       {main: "Retention: +10-15% in repeat hosting rate within 60 days"},
       // milestones & sequencing
-      {type: 'subheading', text: "milestones & sequencing"},
+      {type: 'heading', text: "milestones & sequencing"},
       {main: "Phase 1 (Weeks 1-3): Core toggle functionality and basic mode-specific navigation", subItems: ["Implement header toggle component", "Build mode-specific footer tabs", "Add user preference storage", "Basic QA and internal testing"]},
       {main: "Phase 2 (Weeks 4-5): Polish and optimization", subItems: ["UI/UX refinements based on internal feedback", "Performance optimization for mode switching", "Edge case handling and error states", "Comprehensive testing across browsers"]},
       {main: "Phase 3 (Weeks 6-8): Launch and iteration", subItems: ["Gradual rollout to dual-role user segment", "Monitor success metrics and user feedback", "Quick iteration cycle for immediate improvements", "Prepare enhancement backlog based on learnings"]}

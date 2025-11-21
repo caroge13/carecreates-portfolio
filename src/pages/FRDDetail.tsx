@@ -109,15 +109,50 @@ const FRDDetail = () => {
   const renderContent = (item: any, index: number): React.ReactNode => {
     if (typeof item === 'string') {
       return (
-        <div key={index} className="whitespace-pre-wrap text-muted-foreground leading-relaxed">
+        <div key={index} className="whitespace-pre-wrap text-muted-foreground leading-relaxed mb-4">
           {item}
+        </div>
+      );
+    }
+    
+    // Handle items with 'main' property (bullet points or paragraphs)
+    if (item && typeof item === 'object' && 'main' in item && !item.type) {
+      const hasSubItems = item.subItems && (Array.isArray(item.subItems) ? item.subItems.length > 0 : typeof item.subItems === 'string');
+      return (
+        <div key={index} className="mb-4">
+          {hasSubItems ? (
+            <div className="space-y-1">
+              <div className="flex items-start">
+                <span className="text-primary mr-2 flex-shrink-0">•</span>
+                <span className="text-muted-foreground flex-1">{item.main}</span>
+              </div>
+              {Array.isArray(item.subItems) ? (
+                <ul className="ml-6 space-y-1">
+                  {item.subItems.map((subItem: string, subIdx: number) => (
+                    <li key={subIdx} className="flex items-start text-sm text-muted-foreground/80">
+                      <span className="text-primary mr-2 flex-shrink-0">◦</span>
+                      <span className="flex-1">{subItem}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : typeof item.subItems === 'string' ? (
+                <div className="ml-6 text-sm text-muted-foreground/80">
+                  {item.subItems}
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <p className="text-muted-foreground leading-relaxed">
+              {item.main}
+            </p>
+          )}
         </div>
       );
     }
     
     if (item.type === 'heading') {
       return (
-        <h2 key={index} className={`font-serif text-3xl font-bold text-foreground ${index === 0 ? 'mt-0 mb-4' : 'mt-8 mb-4'}`}>
+        <h2 key={index} className={`font-serif text-3xl font-bold text-foreground ${index === 0 ? 'mt-0 mb-6' : 'mt-10 mb-6'}`}>
           {item.text}
         </h2>
       );
@@ -144,7 +179,7 @@ const FRDDetail = () => {
           {item.content && item.content.map((subItem: any, subIdx: number) => {
             if (typeof subItem === 'string') {
               return (
-                <div key={subIdx} className="text-muted-foreground leading-relaxed">
+                <div key={subIdx} className="text-muted-foreground leading-relaxed mb-4">
                   {subItem}
                 </div>
               );
@@ -152,7 +187,7 @@ const FRDDetail = () => {
             
             if (subItem.type === 'bullet') {
               return (
-                <div key={subIdx} className="space-y-2">
+                <div key={subIdx} className="space-y-2 mb-4">
                   <div className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <span className="text-muted-foreground">{subItem.text}</span>
@@ -173,7 +208,7 @@ const FRDDetail = () => {
             }
             
             if (subItem.type === 'table') {
-              return <div key={subIdx}>{renderTable(subItem)}</div>;
+              return <div key={subIdx} className="mb-4">{renderTable(subItem)}</div>;
             }
             
             return null;
@@ -183,7 +218,7 @@ const FRDDetail = () => {
     }
     
     if (item.type === 'table') {
-      return <div key={index}>{renderTable(item)}</div>;
+      return <div key={index} className="mb-4">{renderTable(item)}</div>;
     }
     
     return null;
