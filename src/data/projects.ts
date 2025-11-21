@@ -353,7 +353,7 @@ export const projects: Project[] = [
         {main: "Feature choice:", subItems: ["Role-specific distinct dashboard UI"]},
         {main: "Future state - user journey:", image: "/Future State - User Journey.png"}
       ],
-      "feature specification": "Click on the FRD!",
+      "feature specification": "Click on the FRD below :)",
       "mvp & OKRs": "Coming soon!",
         // embed figma mockup link
       "development": "This will be at the discretion of Bounce representatives.",

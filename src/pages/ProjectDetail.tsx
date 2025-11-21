@@ -307,7 +307,11 @@ const ProjectDetail = () => {
                                       <img 
                                         src={itemWithSub.image} 
                                         alt="" 
-                                        className="max-w-md rounded-lg shadow-warm-md"
+                                        className={`rounded-lg shadow-warm-md ${
+                                          itemWithSub.image.includes("User Journey") 
+                                            ? "max-w-4xl w-full" 
+                                            : "max-w-md"
+                                        }`}
                                       />
                                     </div>
                                   )}
