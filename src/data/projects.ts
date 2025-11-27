@@ -411,36 +411,18 @@ export const projects: Project[] = [
     id: "brainstation-course-project",
     title: "BrainStation Product Management Certification Course",
     status: "in progress",
-    lifecycleStep: "discovery - user research",
-    description: "Course led by Njeri Grevious, Senior PM - Copilot Experiences @ Microsoft. Creating a product at the intersection of social connection and productivity. Project presentation and feedback takes place December 17, 2025.",
+    lifecycleStep: "mvp & testing",
+    description: "Course led by Njeri Grevious, Senior PM - Copilot Experiences @ Microsoft. Creating a product to combat the 'hobby crisis' and increase mindfulness. Project presentation and feedback takes place December 17, 2025.",
     impact: "",
     skills: ["Product Lifecycle Management", "Discovery & Hypothesis Testing", "User Research & Personas", "Competitive Analysis", "Value Proposition", "Product Strategy"],
     githubLink: "https://github.com/placeholder",
     figmaLink: "https://figma.com/placeholder",
     image: "/project-brainstation.jpg",
     lifecycleContent: {
-      "discovery - problem statement": [
-        {main: "Hypothesis", subItems: ["Young adults feel disconnected from their lives because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fufillment."]},
-        {main: "Research hypothesis statement", subItems: ["I believe that the main reason why young adults feel disconnected from their lives is because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fulfillment.", "I will know this to be true when 7 out of 10 interview participants associate their feelings of disconnection, or living life on “autopilot” with excessive consumption or reduced time allocated to hobbies/creation."]}
+      "strategy submission slidedeck": [
+        {main: "Strategy submission"},
       ],
-      "slidedeck": [
-        // insert slidedecklink here
-        {main: "insert_slidedeck_link_here"}
-      ],
-      "discovery - hypothesis": [
-        {main: "Hypothesis", subItems: ["Young adults feel disconnected from their lives because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fufillment."]},
-        {main: "Research hypothesis statement", subItems: ["I believe that the main reason why young adults feel disconnected from their lives is because excessive digital consumption has replaced hobbies– especially creative ones– that promote presence and fulfillment.", "I will know this to be true when 7 out of 10 interview participants associate their feelings of disconnection, or living life on “autopilot” with excessive consumption or reduced time allocated to hobbies/creation."]}
-      ],
-      "discovery - unique value proposition": [
-        {main: "Direct competitors", subItems: ["Finch: Gamifies self-care and reflection through a virtual pet that \"grows\" as you check in, set goals, reflect", "Emotional grounding through reflection and affirmation", "Weakness: Dopamine still tied to streaks and gamification, not true presence --> users feel productive, but not necessarily translating to fulfillment outside of the app", "Reflection, not creative doing", "Skillshare / Domestika: Provides online classes across creative hobbies", "Helps people start hobbies and explore creativity", "Weakness: Consumption-based, no contribution to ocnsistency/fulfillment", "Consumption, not action", "Stoic / Intellect / Headspace: Helps users reflect, meditate, build emotional awareness"]},
-        {main: "Indirect competitors", subItems: ["TikTok / Instagram Reels (short-form content)", "Spotify / YouTube", "Journalling apps", "Therapy/coaching tools"]},
-        {main: "UVP", subItems: ["For young adults who want to break their consumption habits and make time for meaningful hobbies, our product provides a guided space to start and sustain creative rituals so that they can experience consistent presence and long-term fulfillment."]},
-      ],
-      "discovery - user research": [
-        {main: "Interview questions", subItems: [""]},
-        {main: "Personas", subItems: [""]}
-      ],
-      "mvp & testing": "Coming soon!",
+      "mvp & testing": "Coming soon, MVP link will go here!",
       "development": "Coming soon!",
       "metrics": "Coming soon!",
       "iterations & improvements": "Coming soon!",

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrapbookImage } from "@/components/ui/scrapbook-image";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const lifecycleSteps = [
   "discovery",
@@ -224,6 +225,7 @@ const ProjectDetail = () => {
                   const hasArchitecture = project.architectureContent;
                   const isFRD = stepKey.toLowerCase().includes("feature specification") || stepKey.toLowerCase().includes("frd");
                   const hasFRD = project.frdContent;
+                  const isSlideDeck = stepKey.toLowerCase().includes("slidedeck") || stepKey.toLowerCase().includes("slide deck");
                   
                   if (Array.isArray(content)) {
                     // Check if array contains objects with main/subItems structure
@@ -332,6 +334,22 @@ const ProjectDetail = () => {
                       <p className="text-muted-foreground mt-4 italic">
                         {typeof project.lifecycleContent["tracking note"] === 'string' ? project.lifecycleContent["tracking note"] : ''}
                       </p>
+                    )}
+                    {/* BrainStation strategy slidedeck embed */}
+                    {project.id === "brainstation-course-project" && isSlideDeck && (
+                      <div className="mt-6">
+                        <p className="text-sm text-muted-foreground mb-2">
+                          Strategy submission slidedeck:
+                        </p>
+                        <AspectRatio ratio={16 / 9} className="border border-border rounded-lg overflow-hidden bg-muted">
+                          <iframe
+                            src="https://embed.figma.com/slides/K1kNXnfFxykI7URnJ6wDrw/BrainStation---Strategy-Presentation?node-id=0-1&embed-host=share"
+                            allowFullScreen
+                            className="w-full h-full"
+                            style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+                          />
+                        </AspectRatio>
+                      </div>
                     )}
                         {isDevelopment && hasArchitecture && (
                           <Link 
