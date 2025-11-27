@@ -117,10 +117,10 @@ const ProjectDetail = () => {
                   variant="outline" 
                   className={`gap-2 ${!project.figmaLink || project.figmaLink.includes("placeholder") ? "opacity-40" : ""}`}
                   disabled={!project.figmaLink || project.figmaLink.includes("placeholder")}
-                >
-                  <Figma className="w-4 h-4" />
-                  figma
-                </Button>
+                  >
+                    <Figma className="w-4 h-4" />
+                    figma
+                  </Button>
               </a>
             </div>
           </div>
