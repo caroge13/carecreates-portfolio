@@ -417,7 +417,7 @@ export const projects: Project[] = [
     skills: ["Product Lifecycle Management", "Discovery & Hypothesis Testing", "User Research & Personas", "Competitive Analysis", "Value Proposition", "Product Strategy"],
     githubLink: "https://github.com/placeholder",
     figmaLink: "https://figma.com/placeholder",
-    image: "/project-brainstation.jpg",
+    image: "/minit-logo.png",
     lifecycleContent: {
       "strategy submission slidedeck": [
         {main: "Strategy submission"},
